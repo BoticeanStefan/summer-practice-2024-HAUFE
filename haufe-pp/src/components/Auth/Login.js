@@ -10,11 +10,10 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post('/api/login', { email, password });
-      // Salvare token si redirectionare utilizator
       localStorage.setItem('token', response.data.token);
       window.location.href = '/';
     } catch (error) {
-      console.error('Login failed', error);
+      console.error('Login failed!', error);
     }
   };
 
